@@ -264,7 +264,7 @@ server <- function(input, output) {
                               "Correlation Between X and Y Autoregressive")
     output$riclpm_table <- renderTable(riclpm_table, rownames = TRUE)
 
-    
+    output$starts_table <- renderTable(matrix("Not Run"), colnames = FALSE) 
     if (input$run_starts==TRUE) {
         fit_starts <- lavaan(starts_c, data = data)
         starts_table <- parameterEstimates(fit_starts)[c(41,50,68,59,77,78,79,80,99,109,119,120,121),c(5:10)]
@@ -282,10 +282,10 @@ server <- function(input, output) {
                                     "Correlation Between X and Y Deviations",
                                     "Correlation Between X and Y Deviation Residuals")      
         output$starts_table <- renderTable(starts_table, rownames = TRUE)
-        output$starts_results <- renderText({"STARTS Results"})
     } 
     output$clpm_results <- renderText({"CLPM Results"})
     output$riclpm_results <- renderText({"RI-CLPM Results"})
+    output$starts_results <- renderText({"STARTS Results"})
     })
 }
 
