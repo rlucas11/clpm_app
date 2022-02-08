@@ -121,7 +121,8 @@ ui <- fluidPage(
             p("The Random Intercept Cross-Lagged Panel Model (RI-CLPM) is equivalent to a STARTS model without the state variance; the Cross-Lagged Panel Model (CLPM) is equivalent to the RI-CLPM without the stable trait. Therefore you can specify different data generating models by setting these varianes to zero."),
             p("The app then runs the CLPM, RI-CLPM, and (optionally) STARTS models using the generated data"),
             p("The purpose of this app is to test what happens to cross-lagged paths in the CLPM or RI-CLPM when either the Stable Trait or State variances are omitted from the model."),
-            p("By default, the app only runs the CLPM and RI-CLPM. You can also try the full STARTS model on the generated data, but it can take a few extra seconds to run, so you have to explicitly ask for this output. Also note that you can specify values for which the data are impossible to generate (e.g., high stability plus strong cross-lagged paths). I don't have good error checking for this yet, so if the page freezes, just reload to restart.")
+            p("By default, the app only runs the CLPM and RI-CLPM. You can also try the full STARTS model on the generated data, but it can take a few extra seconds to run, so you have to explicitly ask for this output. Also note that you can specify values for which the data are impossible to generate (e.g., high stability plus strong cross-lagged paths). I don't have good error checking for this yet, so if the page freezes, just reload to restart."),
+            "Source code is available here:", tags$a(href="https://github.com/rlucas11/clpm_app", target="_blank", "https://github.com/rlucas11/clpm_app"),
         ),
 
         # Show a plot of the generated distribution
